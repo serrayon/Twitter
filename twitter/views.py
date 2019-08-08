@@ -1,17 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-<<<<<<< HEAD
-
-# Create your views here.
-
-def home(request):
-  return HttpResponse("You are home")
-
-def json_res(request):
-  return JsonResponse({ "status": "OK"})
-=======
-# Create your views here.
 from .models import Post, Comment
+# from .forms import PostForm
+# Create your views here.
 
 def home(request):
     return HttpResponse("You are home")
@@ -31,4 +22,15 @@ def comment_list(request):
 def post_detail(request, pk):
     post = Post.objects.get(id=pk)
     return render(request, 'post_detail.html', {"post":post})
->>>>>>> eea53fbca0adc26fc6e331a58c585bff83e1aafd
+
+def post_create(request):
+    if request.method == 'POST':
+      form = PostForm(request.POST)
+      if form.is_valid():
+        post = form.save(commit=False)
+        post.user = request.user
+        post.save()
+        return redirect('post_detail', pk=post.pk)
+    else:
+      form = PostForm()
+    return render(request, 'post_form.html', {'form': form,'header': 'New Post'})
