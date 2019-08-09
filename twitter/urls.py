@@ -12,6 +12,6 @@ urlpatterns = [
     path('posts/<int:pk>/comments/new', views.comment_create, name='comment_create'),
     path('comments', views.comment_list, name='comment_list' ),
     path('status',views.json_res, name='status' ),
-    # path('profile/', views.profile, name='profile')   
+    path('profile/', views.profile, name='profile')   
 ]
 
