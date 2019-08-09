@@ -20,13 +20,13 @@
   {% for comment in post.comments.all %}
   <a href="{{comment.spotify_preview}}">
     <li class="track">
-      {{comment.title}}
+      {{comment.message}}
     </li>
   </a>
   {% endfor %}
 </ul>
 {% endblock %}
-Collapse
+
 
 
 

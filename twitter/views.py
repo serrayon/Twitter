@@ -12,7 +12,7 @@ def json_res(request):
 
 def post_list(request):
     post = Post.objects.all()
-    return render(request, 'post_list.html', {"posts": posts})
+    return render(request, 'post_list.html', {"post": post})
     
 
 def comment_list(request):
@@ -38,12 +38,13 @@ def post_create(request):
 
 def post_edit(request, pk):
   if request.method == "POST":
+    post = Post.Objects.get(id=pk)
     form = PostForm(request.POST, instance=post)
     if form.is_valid():
       post = form.save()
       return redirect('post_detail', pk=post.pk)
   else:
-    form = PostForm(instance=artist)
+    form = PostForm(instance=post)
   return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.name}'})
 
 def post_delete(request, pk):
@@ -61,7 +62,7 @@ def comment_create(request, pk):
       return redirect('post_detail', pk=comment.post.pk)
   else:
     form = CommentForm()
-  return render(request, 'post_form.html', {'form': form, 'header':f'Add comment for {post.name}'})
+  return render(request, 'post_form.html', {'form': form, 'header':f'Add comment for {post.user}'})
 
   def profile(request):
     user = request.user
