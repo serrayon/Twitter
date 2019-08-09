@@ -36,16 +36,16 @@ def post_create(request):
     form = PostForm()
   return render(request, 'post_form.html', {'form': form, 'header': f'New Post'})
 
-def post_edit(request, pk, post_id):
-  post = Post.objects.get(id=pk)
-  if request.method == "POST":
-    form = PostForm(request.POST, instance=post)
+def post_edit(request, pk):
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+      form = PostForm(request.POST, instance=post)
     if form.is_valid():
       post = form.save()
       return redirect('post_detail', pk=post_id.pk)
-  else:
-    form = PostForm(instance=post)
-  return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
+    else:
+      form = PostForm(instance=post)
+    return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
 
 def post_delete(request, pk, post_id):
   Post.objects.get(id=pk).delete()
