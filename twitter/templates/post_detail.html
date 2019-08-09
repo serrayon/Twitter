@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block content %}
+
+
+<section class="post-header" style="background-image:url({{post.photo_url}})">
+  <section class="post-info">
+      <h2>{{post.name}} 
+        {% if post.user == user %}
+        <a href="{% url 'post_edit' pk=post.pk %}">edit</a>
+        {% endif %}
+      </h2>
+      <h4><a href="{% url 'post_delete' pk=post.pk %}" class="delete">delete</a> {{post.user}}</h4>
+  </section>
+</section>
+
+
+
+<ul class="tracks">
+    <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
+  {% for comment in post.comments.all %}
+  <a href="{{comment.spotify_preview}}">
+    <li class="track">
+      {{comment.message}}
+    </li>
+  </a>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+

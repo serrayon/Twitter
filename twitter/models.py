@@ -4,7 +4,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Profile(models.Model):
-  avatar = models.TextField()
+  avatar = models.CharField(default="", max_length=160)
 
   def __str__(self):
     return self.avatar
