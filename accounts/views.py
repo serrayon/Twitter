@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
 # Create your views here.
-
 def register(request):
   # if post 
   if request.method == 'POST':
@@ -36,7 +35,6 @@ def register(request):
   # send form
   else:
     return render(request, 'register.html')
-
 def login(request):
   # if post
   if request.method == 'POST':
@@ -54,11 +52,9 @@ def login(request):
     # else return not found
     else:
       return render(request, 'login.html', {'error': 'Invalid Credentials'})
-
   # else send form
   else:
     return render(request, 'login.html')
-
 def logout(request):
   auth.logout(request)
-  # return redirect('artist_list')
+  return redirect('post_list')
