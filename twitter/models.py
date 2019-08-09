@@ -25,6 +25,6 @@ class Comment(models.Model):
   date = models.DateTimeField(default=timezone.now())
 
   def __str__(self):
-    return f"{self.title}-{self.artist}"
+    return f"{self.user}-{self.message}"
 
 
