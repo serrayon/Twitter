@@ -9,9 +9,19 @@
   <title>Twitter</title>
 </head>
 <body>
-    <nav>
-      <h1>Twitter</h1>
-    </nav>
+  <section>
+    {% if user.is_authenticated %}
+    Welcome, {{ user.username }}
+    <a href="{% url 'logout' %}">Signout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Sign Up</a>
+    {% endif %}
+  
+  
+    <a href="/comments">Comments</a>
+    <a href="/posts">Posts</a>
+  </section>
   {% block content %} {% endblock %}
 </body>
 </html>
