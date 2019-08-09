@@ -68,7 +68,7 @@ def comment_create(request, pk):
     form = CommentForm()
   return render(request, 'post_form.html', {'form': form, 'header':f'Add comment for {post.user}'})
 
-  def profile(request):
-    user = request.user
-    posts = Post.objects.filter(user=user)
-    return render(request, 'profile.html', {'posts': posts})
+def profile(request):
+  user = request.user
+  posts = Post.objects.filter(user=user)
+  return render(request, 'profile.html', {'posts': posts})
