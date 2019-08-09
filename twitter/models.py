@@ -11,7 +11,7 @@ class Profile(models.Model):
 
 class Post(models.Model):
   content = models.TextField(default="", max_length=140)
-  photo_url = models.CharField(default= "", max_length=250)
+  photo_url = models.CharField(blank=True, max_length=250)
   date = models.DateTimeField(default=timezone.now())
   user = models.ForeignKey(User, default="", on_delete=models.CASCADE, related_name='posts')
   def __str__(self):

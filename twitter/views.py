@@ -11,8 +11,12 @@ def json_res(request):
     return JsonResponse({ "status" : "Ok" })
 
 def post_list(request):
-    post = Post.objects.all()
-    return render(request, 'post_list.html', {"post": post})
+    posts = Post.objects.all()
+    post = posts.first()
+    # comments = Comment.objects.filter(post=post.pk)
+    # print(post.comments_post.all().first().message)
+    # print(comments)
+    return render(request, 'post_list.html', {"posts": posts})
     
 
 def comment_list(request):
@@ -65,6 +69,6 @@ def comment_create(request, pk):
   return render(request, 'post_form.html', {'form': form, 'header':f'Add comment for {post.user}'})
 
 def profile(request):
-    user = request.user
-    posts = Post.objects.filter(user=user)
+  user = request.user
+  posts = Post.objects.filter(user=user)
   return render(request, 'profile.html', {'posts': posts})
