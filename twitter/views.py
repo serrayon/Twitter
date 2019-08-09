@@ -44,7 +44,7 @@ def post_edit(request, pk):
       post = form.save()
       return redirect('post_detail', pk=post_id.pk)
     else:
-      form = PostForm(instance=post)
+      form = PostForm(instance=post) 
     return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
 
 def post_delete(request, pk, post_id):

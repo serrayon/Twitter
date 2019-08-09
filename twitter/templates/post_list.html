@@ -7,7 +7,7 @@
   <a href="{% url 'post_detail' pk=post.pk %}">
     <li class='track'>
       <img src="{{post.photo_url}}" />
-      {{ post.name }}
+      {{ post.content}}
       Submitted by: {{post.user.username}}
     </li>
   </a>
