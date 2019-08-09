@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
-from .models import Post, Comment
+from .models import Post, Comment, Profile
 from .forms import PostForm, CommentForm, ProfileForm
 
 def home(request):
@@ -35,18 +35,18 @@ def post_create(request):
     form = PostForm()
   return render(request, 'post_form.html', {'form': form, 'header': f'New Post'})
 
-def post_edit(request, pk):
+def post_edit(request, pk, post_id):
   if request.method == "POST":
     post = Post.Objects.get(id=pk)
     form = PostForm(request.POST, instance=post)
     if form.is_valid():
       post = form.save()
-      return redirect('post_detail', pk=post.pk)
+      return redirect('post_detail', pk=post_id.pk)
   else:
     form = PostForm(instance=post)
   return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.name}'})
 
-def post_delete(request, pk):
+def post_delete(request, pk, post_id):
   Post.objects.get(id=pk).delete()
   return redirect('post_lists')
 

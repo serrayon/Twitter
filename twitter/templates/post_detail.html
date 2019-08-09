@@ -15,16 +15,16 @@
 
 
 
-<ul class="tracks">
+<!-- <ul class="tracks">
     <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
   {% for comment in post.comments.all %}
   <a href="{{comment.spotify_preview}}">
     <li class="track">
       {{comment.message}}
     </li>
-  </a>
+  </a> -->
   {% endfor %}
-</ul>
+<!-- </ul> -->
 {% endblock %}
 
 
