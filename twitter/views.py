@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 # Create your views here.
-from .models import Post, Comment
+from .models import Post, Comment, Profile
 from .forms import PostForm, CommentForm, ProfileForm
 
 def home(request):
@@ -49,7 +49,7 @@ def post_edit(request, pk):
 
 def post_delete(request, pk):
   Post.objects.get(id=pk).delete()
-  return redirect('post_lists')
+  return redirect('post_list')
 
 def comment_create(request, pk):
   post = Post.objects.get(id=pk)
