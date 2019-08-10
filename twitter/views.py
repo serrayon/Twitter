@@ -25,7 +25,9 @@ def comment_list(request):
 
 def post_detail(request, pk):
     post = Post.objects.get(id=pk)
-    return render(request, 'post_detail.html', {"post":post})
+    comments = Comment.objects.filter(post=post)
+    print(comments)
+    return render(request, 'post_detail.html', {"post":post, "comments": comments})
 
 
 def post_create(request):
