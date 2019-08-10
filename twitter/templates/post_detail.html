@@ -18,7 +18,9 @@
 <ul class="tracks">
     <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
   {% for comment in comments %}
-  <a href="{{comment.message}}">
+
+  <h2>{{comment.message}}</h2>
+
     <li class="track">
       {{comment.message}}
     </li>
