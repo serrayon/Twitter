@@ -12,20 +12,19 @@
   <title>Twitter</title>
 </head>
 <body>
-  <div class="">
-    <section>
-      {% if user.is_authenticated %}
-      Welcome, {{ user.username }}
-      <a href="{% url 'logout' %}">Signout</a>
-      {% else %}
-      <a href="{% url 'login' %}">Login</a>
-      <a href="{% url 'register' %}">Sign Up</a>
-      {% endif %}
+  <section>
+    {% if user.is_authenticated %}
+    Welcome, {{ user.username }}
+    <a href="{% url 'logout' %}">Signout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Sign Up</a>
+    {% endif %}
   
-    {% comment %} <a href="/comments">Comments</a>
-    <a href="/posts">Posts</a> {% endcomment %}
-    </section>
-  </div>
+  
+    <a href="/comments">Comments</a>
+    <a href="/posts">Posts</a>
+  </section>
   {% block content %} {% endblock %}
 </body>
 </html>
