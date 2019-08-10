@@ -3,9 +3,9 @@ from . import views
 # second part to routes
 
 urlpatterns = [
-    # path('',views.home, name='home'),
-    # path('',views.welcome_page, name='welcome_page'),
-    path('',views.post_list, name='post_list'),
+    # path('',views.home, name='welcome_page'),
+    path('',views.welcome_page, name='welcome_page'),
+    # path('',views.post_list, name='post_list'),
     path('posts/', views.post_list, name = 'post_list'),
     path('posts/<int:pk>', views.post_detail,name='post_detail'),
     path('posts/<int:pk>/edit', views.post_edit, name='post_edit'),
