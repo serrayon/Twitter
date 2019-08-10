@@ -1,0 +1,30 @@
+:root {
+  /* colors */
+--green: rgb(30, 215, 96);
+--red: rgb(215, 30, 55);
+  --light-black: rgb(40, 40, 40);
+  --black: rgb(24, 24, 24);
+  --grey: rgb(170, 170, 170);
+  --sand: rgb(200, 200, 200);
+  --white: rgb(255, 255, 255);
+  /* spacing */
+  --padding-xs: 5px;
+  --padding-sm: 10px;
+  --padding: 15px;
+  --padding-lg: 30px;
+  --padding-xl: 60px;
+  --margin-xs: 5px;
+  --margin-sm: 10px;
+  --margin: 15px;
+  --margin-lg: 30px;
+  --margin-xl: 60px;
+}
+
+.wrapper {
+  background-image: url('https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/02/Twitter.jpg');
+  color: white;
+
+}
+.something {
+  color: var(--green)!important;
+}

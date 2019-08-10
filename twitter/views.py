@@ -5,29 +5,34 @@ from .models import Post, Comment, Profile
 from .forms import PostForm, CommentForm, ProfileForm
 
 def home(request):
-    return HttpResponse("You are home")
+  return HttpResponse("You are home")
+
+def welcome_page(request):
+  return render(request, 'welcome_page.html')
+
 
 def json_res(request):
-    return JsonResponse({ "status" : "Ok" })
+  return JsonResponse({ "status" : "Ok" })
+
 
 def post_list(request):
-    posts = Post.objects.all()
-    post = posts.first()
-    # comments = Comment.objects.filter(post=post.pk)
-    # print(post.comments_post.all().first().message)
-    # print(comments)
-    return render(request, 'post_list.html', {"posts": posts})
+  posts = Post.objects.all()
+  post = posts.first()
+  # comments = Comment.objects.filter(post=post.pk)
+  # print(post.comments_post.all().first().message)
+  # print(comments)
+  return render(request, 'post_list.html', {"posts": posts})
     
 
 def comment_list(request):
-    comments = Comment.objects.all()
-    return render(request, 'comment_list.html', {"comments": comments})
+  comments = Comment.objects.all()
+  return render(request, 'comment_list.html', {"comments": comments})
 
 def post_detail(request, pk):
-    post = Post.objects.get(id=pk)
-    comments = Comment.objects.filter(post=post)
-    print(comments)
-    return render(request, 'post_detail.html', {"post":post, "comments": comments})
+  post = Post.objects.get(id=pk)
+  comments = Comment.objects.filter(post=post)
+  print(comments)
+  return render(request, 'post_detail.html', {"post":post, "comments": comments})
 
 
 def post_create(request):
@@ -43,17 +48,17 @@ def post_create(request):
   return render(request, 'post_form.html', {'form': form, 'header': f'New Post'})
 
 def post_edit(request, pk):
-    post = Post.objects.get(id=pk)
+  post = Post.objects.get(id=pk)
 
-    if request.method == 'POST':
-      form = PostForm(request.POST, instance=post)
-    if form.is_valid():
-      post = form.save()
-      return redirect('post_detail', pk=post_id.pk)
-    
-    else:
-      form = PostForm(instance=post) 
-    return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
+  if request.method == 'POST':
+    form = PostForm(request.POST, instance=post)
+  if form.is_valid():
+    post = form.save()
+    return redirect('post_detail', pk=post_id.pk)
+  
+  else:
+    form = PostForm(instance=post) 
+  return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
 
 def post_delete(request, pk, post_id):
   Post.objects.get(id=pk).delete()

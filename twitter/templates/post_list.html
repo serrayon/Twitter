@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="nav flex-column">
+    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</nav>
 <ul class='tracks'>
   <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
   {% for post in posts %}

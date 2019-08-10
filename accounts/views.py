@@ -48,7 +48,7 @@ def login(request):
       # login
       auth.login(request, user)
       # redirect
-      return redirect('profile')
+      return redirect('post_list')
     # else return not found
     else:
       return render(request, 'login.html', {'error': 'Invalid Credentials'})
@@ -57,4 +57,4 @@ def login(request):
     return render(request, 'login.html')
 def logout(request):
   auth.logout(request)
-  return redirect('post_list')
+  return redirect('welcome_page')
