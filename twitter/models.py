@@ -14,7 +14,6 @@ class Post(models.Model):
   photo_url = models.CharField(blank=True, max_length=250)
   date = models.DateTimeField(default=timezone.now())
   user = models.ForeignKey(User, default="", on_delete=models.CASCADE, related_name='posts')
-
   def __str__(self):
     return f"{self.content}-{self.photo_url}"
 
