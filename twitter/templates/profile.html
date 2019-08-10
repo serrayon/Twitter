@@ -4,12 +4,12 @@
 
 <h1 class="profile-name">{{user.username}}</h1>
 <section>
-    <ul class="tracks">
+    <ul class="comments">
         <h2>Submitted Posts</h2>
             {% if posts %}
         {% for post in posts %}
         <a href="{% url 'post_detail' pk=post.pk %}">
-            <li class='track'>
+            <li class='comment'>
                 <img src="{{post.photo_url}}" />
                 {{ post.name }}
             </li>

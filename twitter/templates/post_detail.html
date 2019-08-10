@@ -15,10 +15,10 @@
 
 
 
-<ul class="tracks">
+<ul class=>
     <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
   {% for comment in post.comments.all %}
-  <a href="{{comment.spotify_preview}}">
+  <h2>{{comment.message}}</h2>
     <li class="track">
       {{comment.message}}
     </li>
