@@ -23,6 +23,15 @@
       <a href="{% url 'register' %}">Sign Up</a> {% endcomment %}
       {% endif %}
     </section>
+
+    <nav class="nav flex-column">
+        <img class="t-image" src="http://www.pngall.com/wp-content/uploads/2016/07/Twitter-High-Quality-PNG.png" alt="twitter-pic" />
+        <br />
+        <a class="nav-link" href="{% url 'post_list' %}">Home</a>
+        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+        <a class="nav-link" href="/comments">Tweet</a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a> 
+     </nav>
   
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
