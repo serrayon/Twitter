@@ -1,16 +1,38 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 
 {% block content %}
-<ul class='tracks'>
-  <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
-  {% for post in posts %}
-  <a href="{% url 'post_detail' pk=post.pk %}">
-    <li class='track'>
-      <img src="{{post.photo_url}}" />
-      {{ post.content }}
-      Submitted by: {{post.user.username}}
-    </li>
-  </a>
+
+<div class="main">
+<nav class="nav flex-column">
+    <img class="t-image" src="http://www.pngall.com/wp-content/uploads/2016/07/Twitter-High-Quality-PNG.png" alt="twitter-pic" />
+    <br />
+    <a class="nav-link" href="{% url 'post_list' %}">Home</a>
+    <a class="nav-link" href="#">Profile</a>
+    <a class="nav-link" href="/comments">Tweet</a>
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> 
+ </nav>
+
+  <div class="text-area">
+    <h3>Home</h3>
+    <form action="" method="get">
+      <textarea name="text" id="text" cols="65" rows="10"></textarea>
+      <button><a href="{% url 'post_create' %}">+</a></button>
+      <button><a href="/comments">Tweet</a></button>
+    </form>
+  </div>
+  </div>
+
+    <ul class='tracks'>
+    <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
+    {% for post in posts %}
+    <a href="{% url 'post_detail' pk=post.pk %}">
+      <li class='track'>
+        <img src="{{post.photo_url}}" /
+        {{ post.content }}
+        Submitted by: {{post.user.username}}
+      </li>
+    </a>
   {% endfor %}
 </ul>
-{% endblock %}
+{% endblock %} 

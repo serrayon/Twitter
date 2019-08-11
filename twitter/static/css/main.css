@@ -1,0 +1,81 @@
+:root {
+  /* colors */
+--green: rgb(30, 215, 96);
+--red: rgb(215, 30, 55);
+  --light-black: rgb(40, 40, 40);
+  --black: rgb(24, 24, 24);
+  --grey: rgb(170, 170, 170);
+  --sand: rgb(200, 200, 200);
+  --white: rgb(255, 255, 255);
+  /* spacing */
+  --padding-xs: 5px;
+  --padding-sm: 10px;
+  --padding: 15px;
+  --padding-lg: 30px;
+  --padding-xl: 60px;
+  --margin-xs: 5px;
+  --margin-sm: 10px;
+  --margin: 15px;
+  --margin-lg: 30px;
+  --margin-xl: 60px;
+}
+.container {
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin: 25px;
+}
+.wrapper {
+  position: relative;
+  /* height: 100vh;
+  width: 40vw; */
+}
+.list {
+  position: absolute;
+  top: 100px;
+  left: 80px;
+}
+.list ul {
+  font-size: 30px;
+  list-style: none;
+  color: white;
+  text-align: center;
+  line-height: 2.6em;
+}
+.image {
+  background-size: cover;
+}
+.welcome {
+  margin: 20px;
+  padding: 20px;
+  line-break: auto;
+  line-height: 2em;
+}
+.main {
+  display: flex;
+}
+.t-image {
+  height: 100px;
+  width: 100px;
+}
+.flex-column {
+  margin: 30px;
+  padding: 30px;
+  width: 25%;
+  line-height: 3em;
+}
+.nav-link {
+  font-size: 35px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-link a:hover {
+  color: black;
+  
+}
+h3 {
+  padding: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
