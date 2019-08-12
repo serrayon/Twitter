@@ -4,9 +4,14 @@
 
 <section class="post-header" style="background-image:url({{post.photo_url}})">
   <section class="post-info">
+<<<<<<< HEAD
   {% comment %} shows a single post and who it was created by {% endcomment %}
       <h2>{{post.content}}
 
+=======
+    {% comment %} shows a single post and who it was created by {% endcomment %}
+      <h2>{{post.content}} 
+>>>>>>> submaster
         {% if post.user == user %}
         <a href="{% url 'post_edit' pk=post.pk %}">edit</a>
         {% endif %}
@@ -16,18 +21,32 @@
 </section>
 
 
+<<<<<<< HEAD
  <ul class="tracks">
     <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
   {% for comment in comments %}
+=======
+
+<ul class="tracks">
+    <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
+  {% for comment in comments %}
+
+>>>>>>> submaster
     <li class="track">
     {% comment %} creates list of comments below the post {% endcomment %}
       {{comment.message}}
     </li>
+<<<<<<< HEAD
   </a> 
   {% endfor %}
 
 
 </ul> 
+=======
+  </a>
+  {% endfor %}
+</ul>
+>>>>>>> submaster
 {% endblock %}
 
 

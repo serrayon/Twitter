@@ -3,40 +3,27 @@
 {% block content %}
 
 
-  <div class="text-area">
-    <h3>Home</h3>
+<div class="text-area-container">
+    <!-- <h3>Home</h3> -->
     <form action="" method="get">
       <textarea name="text" id="text" cols="65" rows="10"></textarea>
       <button><a href="{% url 'post_create' %}">Tweet</a></button>
       {% comment %} <button><a href="/comments">Tweet</a></button> {% endcomment %}
     </form>
   </div>
-  
 
-<section class="form-section">
-    <h1>{{header}}</h1>
-    {% if form %}
-    <form method="POST" class="post-form">
-      {% csrf_token %}
-      {{form.as_p}}
-      <button type="submit">Save</button>
-    </form>
-    {% endif %}
-  </section>
+<ul class='tracks-container'>
 
-
-
-
-    <ul class='tracks'>
-    <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
-    {% for post in posts %}
-    <a href="{% url 'post_detail' pk=post.pk %}">
-      <li class='track'>
-        <img src="{{post.photo_url}}" /
-        {{ post.content }}
-        Submitted by: {{post.user.username}}
-      </li>
-    </a>
+  <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
+  {% for post in posts %}
+  <a href="{% url 'post_detail' pk=post.pk %}">
+    <li class='track'>
+      <img src="{{post.photo_url}}" />
+      {{ post.content }}
+      <!-- {{ post.photo_url }} -->
+      <!-- Submitted by: {{post.user.username}} -->
+    </li>
+  </a>
   {% endfor %}
 </ul>
-{% endblock %} 
+{% endblock %}
