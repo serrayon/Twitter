@@ -80,10 +80,20 @@ h3 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.login{
+/* .login{
   float: right;
   padding:0 20px 0 0;
 }
 .clearfix{
   overflow: auto;
+} */
+.container-base{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "login login"
+  "nav text-area"
+  "tracks tracks"
+
 }
