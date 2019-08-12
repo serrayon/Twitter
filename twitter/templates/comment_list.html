@@ -4,11 +4,11 @@
 <ul class="tracks">
     <h2>Comments </h2>
   {% for comment in comments %}
-  <a href="{{comment.message}}">
-    <li class="track">
+  <h2>"{{comment.message}}"</h2>
+    {% comment %} <li class="track">
       {{ comment.message }}
-    </li>
-  </a>
+    </li> {% endcomment %}
+  
   {% endfor %}
 </ul>
 

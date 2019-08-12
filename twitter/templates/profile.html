@@ -2,7 +2,83 @@
 
 {% block content %}
 
-<h1 class="profile-name">{{user.username}}</h1>
+<head>
+	<title>Profile Card</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div class="card-container">
+
+		<div class="upper-container">
+			<div class="image-container">
+				<img src="profile.jpg" />
+			</div>
+		</div>
+
+		<div class="lower-container">
+			<div>
+				<h3>{{user.username}}</h3>
+				<h4>Front-end Developer</h4>
+			</div>
+			<div>
+				<p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arcu.</p>
+			</div>
+			<div>
+				<a href="#" class="btn">View profile</a>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+
+{% endblock %}
+
+
+<!-- <h1 class="profile-name">{{user.username}}</h1> -->
+<!-- <div class="card" style="width: 18rem;">
+    <img src="{post.photo_url}" class="card-img-top" alt="avatar">
+    <div class="card-body">
+      <h5 class="card-title">{{user.username}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+
+  <!-- </section>
+<head>
+    <title>Profile Card</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+  
+    <div class="card-container">
+  
+      <div class="upper-container">
+        <div class="image-container">
+          <img src="profile.jpg" />
+        </div>
+      </div>
+  
+      <div class="lower-container">
+        <div>
+          <h3>{{user.username}}</h3>
+          <h4>Front-end Developer</h4>
+        </div>
+        <div>
+          <p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arcu.</p>
+        </div>
+        <div>
+          <a href="#" class="btn">View profile</a>
+        </div>
+      </div>
+  
+    </div>
+
 <section>
     <ul class="tracks">
         <h2>Submitted Posts</h2>
@@ -19,6 +95,4 @@
         <h2>You have no Submitted Posts. Add one now!</h2>
         {% endif %}
     </ul>
-</section>
-
-{% endblock %}
+</section> -->

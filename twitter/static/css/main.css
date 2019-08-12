@@ -68,7 +68,6 @@
   top: 100px;
   left: 80px;
 }
-
 .list ul {
   font-size: 30px;
   list-style: none;
@@ -108,7 +107,6 @@
   width: 25%;
   line-height: 3em;
 }
-
 h3 {
   padding: 30px;
   font-size: 30px;
@@ -203,21 +201,25 @@ a.link:hover {
   color: var(--green)!important;
 }
 
-/* login button */
-
-.login-button {
-  color: white;
-  background-color: #1da1f2;
-}
-
-/* about page */
-
 .card{
   /* margin-top: 5em; */
   margin-right: 3em;
 }
 
-/* .card-img-top {
-  width: 20vw;
-  height: 40vh;
-} */
+.login-button {
+  background-color: #1da1f2;
+  border: 1px solid #1da1f2;
+  border-radius: 20px;
+}
+
+.login-div {
+  margin: 150px 0 0 150px;
+}
+
+.login-header {
+  margin-bottom: 25px;
+}
+
+.input-field {
+  background-color: rgba(128,128,128,.5);
+}
