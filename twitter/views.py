@@ -7,12 +7,16 @@ from .forms import PostForm, CommentForm, ProfileForm
 def home(request):
   return HttpResponse("You are home")
 
-def welcome_page(request):
-  return render(request, 'welcome_page.html')
-
 
 def json_res(request):
   return JsonResponse({ "status" : "Ok" })
+
+
+def welcome_page(request):
+  return render(request, 'welcome_page.html')
+
+def about(request):
+  return render(request, 'about.html')
 
 
 def post_list(request):
@@ -49,23 +53,21 @@ def post_create(request):
 
 def post_edit(request, pk):
   post = Post.objects.get(id=pk)
-
   if request.method == 'POST':
     form = PostForm(request.POST, instance=post)
-  if form.is_valid():
-    post = form.save()
-    return redirect('post_detail', pk=post_id.pk)
-  
+    if form.is_valid():
+      post = form.save()
+      return redirect('post_detail', pk=post.pk)
   else:
     form = PostForm(instance=post) 
   return render(request, 'post_form.html', {'form': form, 'header':f'Edit {post.content}'})
 
-def post_delete(request, pk, post_id):
+def post_delete(request, pk):
   Post.objects.get(id=pk).delete()
   return redirect('post_list')
 
 def comment_create(request, pk):
-  # post = Post.objects.get(id=pk)
+  post = Post.objects.get(id=pk)
   if request.method =='POST':
     form = CommentForm(request.POST)
     if form.is_valid():

@@ -4,6 +4,7 @@
 
 <section class="post-header" style="background-image:url({{post.photo_url}})">
   <section class="post-info">
+    {% comment %} shows a single post and who it was created by {% endcomment %}
       <h2>{{post.content}} 
         {% if post.user == user %}
         <a href="{% url 'post_edit' pk=post.pk %}">edit</a>
@@ -15,20 +16,17 @@
 
 
 
-<!-- <ul class="tracks">
+<ul class="tracks">
     <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
   {% for comment in comments %}
 
-  <h2>{{comment.message}}</h2>
-
     <li class="track">
+    {% comment %} creates list of comments below the post {% endcomment %}
       {{comment.message}}
     </li>
-  </a> -->
+  </a>
   {% endfor %}
-
-
-<!-- </ul> -->
+</ul>
 {% endblock %}
 
 

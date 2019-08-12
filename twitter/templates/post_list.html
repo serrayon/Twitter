@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav class="nav flex-column">
-    <a class="nav-link active" href="#">Active</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-</nav>
-<ul class='tracks'>
+
+
+<div class="text-area-container">
+    <!-- <h3>Home</h3> -->
+    <form action="" method="get">
+      <textarea name="text" id="text" cols="65" rows="10"></textarea>
+      <button><a href="{% url 'post_create' %}">Tweet</a></button>
+      {% comment %} <button><a href="/comments">Tweet</a></button> {% endcomment %}
+    </form>
+  </div>
+
+<ul class='tracks-container'>
+
   <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
   {% for post in posts %}
   <a href="{% url 'post_detail' pk=post.pk %}">
     <li class='track'>
       <img src="{{post.photo_url}}" />
       {{ post.content }}
-      Submitted by: {{post.user.username}}
+      <!-- {{ post.photo_url }} -->
+      <!-- Submitted by: {{post.user.username}} -->
     </li>
   </a>
   {% endfor %}
