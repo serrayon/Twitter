@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-# second part to routes
+# second part to routesj
 
 urlpatterns = [
 

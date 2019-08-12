@@ -1,17 +1,16 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 
 {% block content %}
 
 
-
 <div class="text-area-container">
-    <h3>Home</h3>
-    <form action="" method="get">
-      <textarea name="text" id="text" cols="65" rows="10"></textarea>
-      <button><a href="{% url 'post_create' %}">Tweet</a></button>
-      {% comment %} <button><a href="/comments">Tweet</a></button> {% endcomment %}
-    </form>
-  </div>
+  <form method="POST" action="{% url 'post_create' %}" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Tweet</button>
+  </form>
+</div>
+
 
 <ul class='tracks-container'>
 
