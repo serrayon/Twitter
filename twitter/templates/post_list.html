@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
 <div class="text-area-container">
     <!-- <h3>Home</h3> -->
     <form action="" method="get">
@@ -12,6 +13,7 @@
   </div>
 
 <ul class='tracks-container'>
+
   <h2>Posts <a href="{% url 'post_create' %}">+</a></h2>
   {% for post in posts %}
   <a href="{% url 'post_detail' pk=post.pk %}">
