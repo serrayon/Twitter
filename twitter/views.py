@@ -25,10 +25,11 @@ def welcome_page(request):
 def post_list(request):
   posts = Post.objects.all()
   post = posts.first()
+  form = PostForm()
   # comments = Comment.objects.filter(post=post.pk)
   # print(post.comments_post.all().first().message)
   # print(comments)
-  return render(request, 'post_list.html', {"posts": posts})
+  return render(request, 'post_list.html', {"posts": posts, "form": form})
     
 
 def comment_list(request):
@@ -86,3 +87,15 @@ def profile(request):
   user = request.user
   posts = Post.objects.filter(user=user)
   return render(request, 'profile.html', {'posts': posts})
+
+def search(request):        
+    if request.method == 'POST':      
+        post_detail =  request.POST.getlist('search')      
+        try:
+            status = Add_prod.objects.filter(comment__icontains=comment)
+            #Add_prod class contains a column called 'bookname'
+        except Add_prod.DoesNotExist:
+            status = None
+        return render(request,"search.html",{"posts":status})
+    else:
+        return render(request,"search.html",{})
