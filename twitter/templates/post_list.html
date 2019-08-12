@@ -3,8 +3,9 @@
 {% block content %}
 
 
+
 <div class="text-area-container">
-    <!-- <h3>Home</h3> -->
+    <h3>Home</h3>
     <form action="" method="get">
       <textarea name="text" id="text" cols="65" rows="10"></textarea>
       <button><a href="{% url 'post_create' %}">Tweet</a></button>
@@ -26,4 +27,5 @@
   </a>
   {% endfor %}
 </ul>
+
 {% endblock %}
