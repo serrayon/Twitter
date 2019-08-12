@@ -2,16 +2,24 @@
 
 {% block content %}
 
-
-
 <div class="text-area-container">
+  <section class="form-section">
+    <form method="POST" action="{% url 'post_create' %}" class="post-form">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit">Tweet</button>
+    </form>
+  </section>
+</div>
+
+<!-- <div class="text-area-container">
     <h3>Home</h3>
     <form action="" method="get">
       <textarea name="text" id="text" cols="65" rows="10"></textarea>
       <button><a href="{% url 'post_create' %}">Tweet</a></button>
       {% comment %} <button><a href="/comments">Tweet</a></button> {% endcomment %}
     </form>
-  </div>
+  </div> -->
 
 <ul class='tracks-container'>
 
@@ -19,8 +27,15 @@
   {% for post in posts %}
   <a href="{% url 'post_detail' pk=post.pk %}">
     <li class='track'>
-      <img src="{{post.photo_url}}" />
-      {{ post.content }}
+        <div class="card-body">
+            <p class="card-text">{{ post.content }}</p>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="{{ post.photo_url }}" class="card-img-top" alt="...">
+        </div>
+      <!-- {{ post.content }} -->
+      <!-- <br> -->
+      <!-- <img src="{{post.photo_url}}" /> -->
       <!-- {{ post.photo_url }} -->
       <!-- Submitted by: {{post.user.username}} -->
     </li>

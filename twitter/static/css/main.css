@@ -202,3 +202,22 @@ a.link:hover {
 .something {
   color: var(--green)!important;
 }
+
+/* login button */
+
+.login-button {
+  color: white;
+  background-color: #1da1f2;
+}
+
+/* about page */
+
+.card{
+  /* margin-top: 5em; */
+  margin-right: 3em;
+}
+
+/* .card-img-top {
+  width: 20vw;
+  height: 40vh;
+} */
