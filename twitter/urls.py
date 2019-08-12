@@ -3,6 +3,7 @@ from . import views
 # second part to routes
 
 urlpatterns = [
+
     # path('',views.home, name='home'),
     path('', views.welcome_page, name='welcome_page'),
     path('home',views.post_list, name='post_list'),

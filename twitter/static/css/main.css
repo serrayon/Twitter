@@ -1,5 +1,6 @@
 :root {
   /* colors */
+
   --green: rgb(30, 215, 96);
   --red: rgb(215, 30, 55);
   --light-black: rgb(40, 40, 40);
@@ -19,6 +20,7 @@
   --margin-lg: 30px;
   --margin-xl: 60px;
 }
+
 
 .container-class {
     display: grid;
@@ -190,4 +192,12 @@ a.link:hover {
 
 .track {
     display: block;
+
+.wrapper {
+  background-image: url('https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/02/Twitter.jpg');
+  color: white;
+
+}
+.something {
+  color: var(--green)!important;
 }

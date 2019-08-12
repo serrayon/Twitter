@@ -7,14 +7,17 @@ from .forms import PostForm, CommentForm, ProfileForm
 def home(request):
   return HttpResponse("You are home")
 
+
 def json_res(request):
   return JsonResponse({ "status" : "Ok" })
+
 
 def welcome_page(request):
   return render(request, 'welcome_page.html')
 
 def about(request):
   return render(request, 'about.html')
+
 
 def post_list(request):
   posts = Post.objects.all()
