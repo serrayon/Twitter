@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
 <div class="text-area-container">
   <form method="POST" action="{% url 'post_create' %}" class="post-form">
     {% csrf_token %}
@@ -9,6 +10,7 @@
     <button type="submit">Tweet</button>
   </form>
 </div>
+
 
 <ul class='tracks-container'>
 
@@ -24,4 +26,5 @@
   </a>
   {% endfor %}
 </ul>
+
 {% endblock %}

@@ -53,7 +53,7 @@ def post_create(request):
       return redirect('post_detail', pk=post.pk)
   else:
     form = PostForm()
-  return render(request, 'post_form.html', {'form': form, 'header': f'New Post'})
+  return render(request, 'post_list.html', {'form': form, 'header': f'New Post'})
 
 def post_edit(request, pk):
   post = Post.objects.get(id=pk)
