@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+
 # Create your views here.
+
 def register(request):
   # if post 
   if request.method == 'POST':
@@ -25,8 +27,7 @@ def register(request):
           # if everything is ok Create a User
           user = User.objects.create_user(
             username = username, password=password,
-            email=email, first_name=first_name, last_name=last_name
-          )
+            email=email, first_name=first_name, last_name=last_name)
           user.save()
           return redirect('login')
     else: 
@@ -35,6 +36,7 @@ def register(request):
   # send form
   else:
     return render(request, 'register.html')
+
 def login(request):
   # if post
   if request.method == 'POST':
@@ -48,13 +50,14 @@ def login(request):
       # login
       auth.login(request, user)
       # redirect
-      return redirect('profile')
+      return redirect('post_list')
     # else return not found
     else:
       return render(request, 'login.html', {'error': 'Invalid Credentials'})
   # else send form
   else:
     return render(request, 'login.html')
+
 def logout(request):
   auth.logout(request)
-  return redirect('post_list')
+  return redirect('welcome_page')
