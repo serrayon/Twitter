@@ -2,97 +2,61 @@
 
 {% block content %}
 
-<head>
-	<title>Profile Card</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<div class="profile-container">
+  <br />
+  <h3>Welcome  {{ user.username }}</h3>
+  <br />
+  <form method="POST" action="{% url 'profile' %}" class="profile-form">
+    {% csrf_token %}
+    <img src="{{profile}}" />
+    {{ form.as_p }}
+    <button type="submit">Edit Profile</button>
+  </form>
+</div>
 
-<body>
+<!-- <form method="POST" action="{% url 'profile' %}" class="profile-form">
+    {% csrf_token %}
+    {{ form.as_p }} -->
+    <!-- <button type="submit">Tweet</button> -->
+  <!-- </form>
 
-	<div class="card-container">
+<p>{{ profile.avatar }}</p>-->
 
-		<div class="upper-container">
-			<div class="image-container">
-				<img src="profile.jpg" />
-			</div>
-		</div>
+<section class="post-info">
+    
+    {% comment %} shows a single post and who it was created by {% endcomment %}
+      <h2>{{post.content}}
+        {% if post.user == user %}
+        <a href="{% url 'post_create' pk=post.pk %}">edit</a>
+      {{post.user.username}}</h4>
+        {% endif %}
+      </h2>
+  </section>
 
-		<div class="lower-container">
-			<div>
-				<h3>{{user.username}}</h3>
-				<h4>Front-end Developer</h4>
-			</div>
-			<div>
-				<p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arcu.</p>
-			</div>
-			<div>
-				<a href="#" class="btn">View profile</a>
-			</div>
-		</div>
+  <ul class='tracks-container'>
 
-	</div>
-
-</body>
+      <!-- <h2>Posts <a href="{% url 'post_create' %}">+</a></h2> -->
+      {% for post in posts %}
+      <a href="{% url 'post_detail' pk=post.pk %}">
+        <li class='track'>
+            <div class="card-body">
+              <p class="avatar">{{ profile.avatar }}</p>   
+              <p class="card-text">{{ post.content }}</p>
+            </div>
+            <div class="card" style="width: 40rem;">
+                <img src="{{ post.photo_url }}" class="card-img-top" alt="...">
+            </div>
+          <!-- {{ post.content }} -->
+          <!-- <br> -->
+          <!-- <img src="{{post.photo_url}}" /> -->
+          <!-- {{ post.photo_url }} -->
+          <!-- Submitted by: {{post.user.username}} -->
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
 
 
 {% endblock %}
 
 
-<!-- <h1 class="profile-name">{{user.username}}</h1> -->
-<!-- <div class="card" style="width: 18rem;">
-    <img src="{post.photo_url}" class="card-img-top" alt="avatar">
-    <div class="card-body">
-      <h5 class="card-title">{{user.username}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
-
-  <!-- </section>
-<head>
-    <title>Profile Card</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  
-  <body>
-  
-    <div class="card-container">
-  
-      <div class="upper-container">
-        <div class="image-container">
-          <img src="profile.jpg" />
-        </div>
-      </div>
-  
-      <div class="lower-container">
-        <div>
-          <h3>{{user.username}}</h3>
-          <h4>Front-end Developer</h4>
-        </div>
-        <div>
-          <p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arcu.</p>
-        </div>
-        <div>
-          <a href="#" class="btn">View profile</a>
-        </div>
-      </div>
-  
-    </div>
-
-<section>
-    <ul class="tracks">
-        <h2>Submitted Posts</h2>
-            {% if posts %}
-        {% for post in posts %}
-        <a href="{% url 'post_detail' pk=post.pk %}">
-            <li class='track'>
-                <img src="{{post.photo_url}}" />
-                {{ post.name }}
-            </li>
-        </a>
-        {% endfor %}
-        {% else %}
-        <h2>You have no Submitted Posts. Add one now!</h2>
-        {% endif %}
-    </ul>
-</section> -->

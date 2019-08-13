@@ -5,6 +5,8 @@ from django.utils import timezone
 # Create your models here.
 class Profile(models.Model):
   avatar = models.CharField(default="", max_length=140)
+  user = models.ForeignKey(User, default="", on_delete=models.CASCADE, related_name='profile_user')
+
 
   def __str__(self):
     return self.avatar

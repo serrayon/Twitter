@@ -34,7 +34,7 @@
         <br />
         <button class="button">  <a class="link1 link" href="{% url 'post_list' %}">Home</a></button>
         <button class="button"> <a class="link2 link" href="{% url 'profile' %}">Profile</a></button>
-        <button class="button"> <a class="link3 link" href="/comments">Tweet</a></button>
+        <button class="button"> <a class="link3 link" href="{% url 'about' %}">About</a></button>
         <button class="button"> <a class="link4 link" href="{% url 'logout' %}">Logout</a></button>
       </nav>
 
@@ -60,7 +60,7 @@
       crossorigin="anonymous"></script>
     {% block content %} {% endblock %}
   </div>
-
+<script src="{% static 'app.js' %}"></script>
 </body>
 
 </html>

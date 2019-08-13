@@ -1,33 +1,96 @@
-{% extends 'base.html'%}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../static/css/main.css">
+  <title>Twitter</title>
+</head>
 
+<body>
+  <div class="container-class">
 
-<section class="post-header" style="background-image:url({{post.photo_url}})">
-  <section class="post-info">
-    {% comment %} shows a single post and who it was created by {% endcomment %}
-      <h2>{{post.content}} 
+    <nav class="navigation-container">
+      <img class="t-image" src="http://www.pngall.com/wp-content/uploads/2016/07/Twitter-High-Quality-PNG.png"
+        alt="twitter-pic" />
+      <br />
+      <button class="button"> <a class="link1 link" href="{% url 'post_list' %}">Home</a></button>
+      <button class="button"> <a class="link2 link" href="{% url 'profile' %}">Profile</a></button>
+      <button class="button"> <a class="link3 link" href="{% url 'about' %}">About</a></button>
+      <button class="button"> <a class="link4 link" href="{% url 'logout' %}">Logout</a></button>
+    </nav>
+    
+    <div class="card-body" style="width: 40rem;">
+      <h2 class="post-content">{{post.content}}</h2>
+      <!-- <p>{{ post.photo_url }}</p> -->
+      <div class="card" style="width: 40rem;">
+          <img src="{{ post.photo_url }}" class="card-img-top" alt="...">
+      </div>
+      
+    </div>
+    <ul class="tracks">
+        <h4>Comments <a href="{% url 'comment_create' pk=post.pk %}"> Add</a></h4>
+        
+        {% for comment in comments %}
+  
+        <li class="track">
+          {% comment %} creates list of comments below the post {% endcomment %}
+          {{comment.message}}
+        </li>
+        </a>
+        {% endfor %}
+      </ul>
+      <section class="post-info">
+        {% comment %} shows a single post and who it was created by {% endcomment %}
+
+        <!-- {{post.photo_url}}</h2> -->
         {% if post.user == user %}
-        <a href="{% url 'post_edit' pk=post.pk %}">edit</a>
+        <a class="edit" href="{% url 'post_edit' pk=post.pk %}">Edit</a>
         {% endif %}
-      </h2>
-      <h4><a href="{% url 'post_delete' pk=post.pk %}" class="delete">delete</a> {{post.user.username}}</h4>
-  </section>
-</section>
+        <h4><a href="{% url 'post_delete' pk=post.pk %}" class="delete">Delete</a> </h4>
+
+        
+        <!-- {{post.user.username}} -->
+      </section>
+    
+    
+    
+  </div>
+    
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+        <!-- {% block content %} {% endblock %} -->
+      
+     
+    
+</body>
+</html>
+
+
+<!-- <section class="post-header" style="background-image:url({{post.photo_url}})"> -->
+
+  
+<!-- </section> -->
 
 
 
-<ul class="tracks">
-    <h2>Comments <a href="{% url 'comment_create' pk=post.pk %}">+</a></h2>
-  {% for comment in comments %}
 
-    <li class="track">
-    {% comment %} creates list of comments below the post {% endcomment %}
-      {{comment.message}}
-    </li>
-  </a>
-  {% endfor %}
-</ul>
-{% endblock %}
+
 
 
 

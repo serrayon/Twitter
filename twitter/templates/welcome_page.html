@@ -15,28 +15,9 @@
 </head>
 
 <body>
-   <div id="login">
-      {% if error%}
-      <p> style="background-color: firebrick;">{{error}}</p>
-      {% endif %}
-      <section class="form-section">
-         <form action="{% url 'login' %}" method="POST" class="artist-form">
-            {% csrf_token %}
-            <p>
-               <label for="username">Username</label>
-               <input type="text" name="username" required maxlength="25" minlength="2">
-            </p>
-            <p>
-               <label for="password">Password</label>
-               <input type="text" name="password" required maxlength="25" minlength="4">
-            </p>
-            <button type="submit">Login</button>
-         </form>
-      </section>
-   </div>
    <div class="container">
       <div class="wrapper">
-         <img class="image" src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/02/Twitter.jpg"
+         <img class="image twitter-logo" src="../static/pictures/3asnKwk - Imgur.png"
             alt="twitter" />
          <div class="list">
             <ul>
@@ -51,10 +32,36 @@
          <br />
          <br />
          <p>Just join Twitter today</p>
-         <button><a href="{% url 'login' %}">Login</a></button>
+         <!-- <button ><a href="{% url 'login' %}">Login</a></button> -->
+         <button class="modal-btn btn btn-primary">Login</button>
          <button><a href="{% url 'register' %}">Sign Up</a></button>
       </div>
    </div>
+   <div class="modal-bg">
+         <div class="modal">
+               <div id="login" class="login-div">  
+                     {% if error%}
+                         <p> style="background-color: firebrick;">{{error}}</p>
+                       {% endif %}
+                       <h3 class="login-header">Log into Twitter</h3>
+                       <section class="form-section">
+                         <form action="{% url 'login' %}" method="POST" class="artist-form">
+                           {% csrf_token %}
+                           <p>
+                             <label for="username">Username</label>
+                             <input type="text" class="input-field" name="username" required maxlength="25" minlength="2">
+                           </p>
+                           <p>
+                             <label for="password">Password</label>
+                             <input type="password" name="password" required maxlength="25" minlength="4">
+                           </p>
+                           <button type="submit" class="login-button">Login</button>
+                         </form>
+                       </section>
+                       </div>
+           <button class="modal-close modal-x">X</button>
+         </div>
+       </div>
    <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -66,7 +73,7 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
-
+<script src="../static/js/app.js"></script>
 </body>
 
 </html>
