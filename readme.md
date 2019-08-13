@@ -45,11 +45,14 @@
 
 -Before  
 
- 
+ ![Twitter](/IMG_1813.jpg)
+Format: ![Alt Text](url)
 
  
 
 -After  
+ ![Twitter](/IMG_1814.jpg)
+Format: ![Alt Text](url)
 
  
 
