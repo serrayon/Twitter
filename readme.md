@@ -45,7 +45,8 @@
 
 -Before  
 
- ![Twitter](/IMG_1813.jpg)
+![IMG_1813](https://user-images.githubusercontent.com/35648615/62968492-06fb1700-bdc0-11e9-8b8d-56edaa1f7ba4.jpg)
+
 
 
  
