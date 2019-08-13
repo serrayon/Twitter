@@ -41,9 +41,15 @@ Planned Features
 -update and delete (self) 
 
 
-
 Wireframe 
 
--Before 
+-Before  
 
+ 
+
+ 
+
+-After  
+
+ 
 
