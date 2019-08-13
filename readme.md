@@ -1,12 +1,12 @@
-Twitter Clone  
+*Twitter Clone  
 
   
 
-Project 2  
+*Project 2  
 
   
 
-Link to Heroku 
+*Link to Heroku 
 
 - 
 
@@ -14,7 +14,7 @@ Link to Heroku
 
   
 
-Technologies used 
+*Technologies used 
 
 -Django 
 
@@ -32,7 +32,7 @@ Technologies used
 
   
 
-Planned Features 
+*Planned Features 
 
 -User can create account 
 
@@ -41,7 +41,7 @@ Planned Features
 -update and delete (self) 
 
 
-Wireframe 
+*Wireframe 
 
 -Before  
 
