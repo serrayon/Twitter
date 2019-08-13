@@ -1,0 +1,372 @@
+:root {
+  /* colors */
+
+  --green: rgb(30, 215, 96);
+  --red: rgb(215, 30, 55);
+  --light-black: rgb(40, 40, 40);
+  --black: rgb(24, 24, 24);
+  --grey: rgb(170, 170, 170);
+  --sand: rgb(200, 200, 200);
+  --white: rgb(255, 255, 255);
+  /* spacing */
+  --padding-xs: 5px;
+  --padding-sm: 10px;
+  --padding: 15px;
+  --padding-lg: 30px;
+  --padding-xl: 60px;
+  --margin-xs: 5px;
+  --margin-sm: 10px;
+  --margin: 15px;
+  --margin-lg: 30px;
+  --margin-xl: 60px;
+}
+
+
+.container-class {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav tweet"
+        "nav posts"
+        ". posts"
+        ". posts"
+        ". posts";
+    grid-gap: 1em;
+}
+
+.login-container {
+    grid-area: header;
+}
+
+.navigation-container {
+    grid-area: nav;
+}
+
+.text-area-container {
+    grid-area: tweet;
+}
+
+.tracks-container {
+    grid-area: posts;
+    /* border: 1px solid grey; */
+    padding: 0 20em 0 0;
+    /* margin: 4em; */
+}
+
+.track {
+  border: 1px solid rgb(182, 220, 245);
+  padding: 0 0 2em 2em;
+}
+
+.track:hover {
+  background-color: rgba(182, 220, 245, 0.2);
+}
+
+/* .form-section {
+  visibility: visible;
+  height: 200px;
+} */
+
+/* jacky's welcome page CSS */
+.wrapper {
+  position: relative;
+  /* height: 100vh;
+    width: 40vw; */
+}
+
+.list {
+  position: absolute;
+  top: 100px;
+  left: 80px;
+}
+.list ul {
+  font-size: 30px;
+  list-style: none;
+  color: white;
+  text-align: center;
+  line-height: 2.6em;
+}
+
+.image {
+  background-size: cover;
+}
+
+/* .twitter-logo */
+
+
+.welcome {
+  margin: 20px;
+  padding: 20px;
+  line-break: auto;
+  line-height: 2em;
+}
+
+.main {
+  display: flex;
+}
+
+.t-image {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 1rem auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.flex-column {
+  margin: 30px;
+  padding: 30px;
+  width: 25%;
+  line-height: 3em;
+}
+h3 {
+  padding: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* .wrapper { 
+    background-color: blue;
+    color: white;
+}*/
+
+.container {
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin: 25px;
+}
+
+/* #login {
+    float: right;
+} */
+
+/* .navigation {
+    display: inline;
+    color: black!important;
+} */
+
+/* .text-area {
+    display: inline;
+} */
+
+/* navigation */
+.navigation-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "t-image"
+        "link1"
+        "link2"
+        "link3"
+        "link4";
+    font-size: 35px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+}
+
+/* .navigation-container a:hover {
+color: lightskyblue;
+} */
+
+.button {
+    margin: 1rem 5rem;
+    padding: 0.7rem;
+    font-size: 1.6rem;
+    background-color: white !important;
+    border: 0px solid white;
+    /* color: white!important; */
+    border-radius: 60px;
+    text-decoration: none !important;
+    transition-duration: 0.4s;
+    
+}
+
+.button:hover {
+    background: #38a1f2 !important;
+    color: white !important;
+}
+
+/* .link {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+} */
+
+a.link:hover {
+    text-decoration: none;
+    color: white !important;
+}
+
+.track {
+    display: block;
+}
+
+.wrapper {
+  background-image: url('https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/02/Twitter.jpg');
+  color: white;
+}
+
+/* .something {
+  color: var(--green)!important;
+} */
+
+/* about page */
+.card-deck {
+  margin: 2em 2em 0 0;
+}
+
+.about-card {
+  /* margin-top: 5em; */
+  margin-right: 3em;
+  border-radius: 20px;
+  /* background-color */
+  box-shadow: 5px 5px 10px #868585;
+  background-image: linear-gradient(to top left, #099CFF, #C624FF);
+  color: white;
+}
+
+.about-pic {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+.follow-button {
+  justify-content: center;
+}
+
+.login-button {
+  background-color: #1da1f2;
+  border: 1px solid #1da1f2;
+  border-radius: 20px;
+}
+
+.login-div {
+  /* margin: 150px 0 0 150px; */
+}
+
+.login-header {
+  
+}
+
+.input-field {
+  background-color: rgba(128,128,128,.5);
+}
+
+/* tweet form */
+
+.post-form {
+  margin: 3em 0 3em 0;
+}
+
+/* post details page */
+
+.post-header {
+  background-repeat: no-repeat;
+}
+
+.post-content {
+  margin-top: 5em;
+}
+
+.delete {
+  margin-left: 13em;
+}
+
+.edit {
+  margin-left: 14.2em;
+  font-size: 1.5em;
+}
+
+/* login modal */
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.bg-active{
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  width: 45vw;
+  height: 40vh;
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+}
+
+.modal-x {
+  margin-left: 18.4em;
+}
+
+/* sign up page */
+.form-section2 {
+  /* display: flex;
+  justify-content: center; */
+  margin: 150px 0 0 150px;
+}
+.submit-button9 {
+  background-color: #1da1f2;
+  border: 1px solid #1da1f2;
+  border-radius: 20px;
+  color: white;
+}
+
+.signup_form {
+  background-color: rgba(66, 117, 225, 0.5);
+}
+
+/* login page */
+/* .login-button {
+  background-color: #1da1f2;
+  border: 1px solid #1da1f2;
+  border-radius: 20px;
+  color: white;
+}
+.login-div {
+  margin: 150px 0 0 150px;
+}
+.login-header {
+  margin-bottom: 25px;
+}*/
+
+.input-field {
+  background-color: rgba(66, 117, 225, 0.5);
+}
+.login-password-input {
+  background-color: rgba(66, 117, 225, 0.5);
+}
+.signup-help {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  /* justify-content: center; */
+}

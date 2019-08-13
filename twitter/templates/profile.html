@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="profile-container">
+  <br />
+  <h3>Welcome  {{ user.username }}</h3>
+  <br />
+  <form method="POST" action="{% url 'profile' %}" class="profile-form">
+    {% csrf_token %}
+    <img src="{{profile}}" />
+    {{ form.as_p }}
+    <button type="submit">Edit Profile</button>
+  </form>
+</div>
+
+<!-- <form method="POST" action="{% url 'profile' %}" class="profile-form">
+    {% csrf_token %}
+    {{ form.as_p }} -->
+    <!-- <button type="submit">Tweet</button> -->
+  <!-- </form>
+
+<p>{{ profile.avatar }}</p>-->
+
+<section class="post-info">
+    
+    {% comment %} shows a single post and who it was created by {% endcomment %}
+      <h2>{{post.content}}
+        {% if post.user == user %}
+        <a href="{% url 'post_create' pk=post.pk %}">edit</a>
+      {{post.user.username}}</h4>
+        {% endif %}
+      </h2>
+  </section>
+
+  <ul class='tracks-container'>
+
+      <!-- <h2>Posts <a href="{% url 'post_create' %}">+</a></h2> -->
+      {% for post in posts %}
+      <a href="{% url 'post_detail' pk=post.pk %}">
+        <li class='track'>
+            <div class="card-body">
+              <p class="avatar">{{ profile.avatar }}</p>   
+              <p class="card-text">{{ post.content }}</p>
+            </div>
+            <div class="card" style="width: 40rem;">
+                <img src="{{ post.photo_url }}" class="card-img-top" alt="...">
+            </div>
+          <!-- {{ post.content }} -->
+          <!-- <br> -->
+          <!-- <img src="{{post.photo_url}}" /> -->
+          <!-- {{ post.photo_url }} -->
+          <!-- Submitted by: {{post.user.username}} -->
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+
+
+{% endblock %}
+
+

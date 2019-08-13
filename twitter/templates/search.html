@@ -1,0 +1,11 @@
+
+
+
+
+{% comment %} {% if comments %}
+    <a href="{% url 'comment_list' pk=comment.pk %}">
+    <!--Upon successful search book image with hyperlink appears -->
+    <img src="{{books.image.url}}" alt="No Image"></a>
+    <p>{{books.bookname}}</p>
+    <p>Rs.{{books.price}}</p>   
+{% endif %} {% endcomment %}

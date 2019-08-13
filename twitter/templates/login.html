@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="login" class="login-div">  
+{% if error%}
+    <p> style="background-color: firebrick;">{{error}}</p>
+  {% endif %}
+  <h1 class="login-header">Log into Twitter</h1>
+  <section class="form-section">
+    <form action="{% url 'login' %}" method="POST" class="artist-form">
+      {% csrf_token %}
+      <p>
+        <label for="username">Username</label>
+        <input type="text" class="input-field" name="username" required maxlength="25" minlength="2">
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" name="password" required maxlength="25" minlength="4">
+      </p>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+  </section>
+  </div>
+{% endblock %}
+

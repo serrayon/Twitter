@@ -1,0 +1,38 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="text-area-container create-tweet">
+  <form method="POST" action="{% url 'post_create' %}" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Tweet</button>
+  </form>
+</div>
+
+
+<ul class='tracks-container'>
+
+  <h2> <a href="{% url 'post_create' %}">Add Post +</a></h2>
+  {% for post in posts %}
+  <a href="{% url 'post_detail' pk=post.pk %}">
+    <li class='track'>
+        <div class="card-body">
+          <p class="avatar">{{ profile.avatar }}</p>   
+          <p class="card-text">{{ post.content }}</p>
+        </div>
+        <div class="card" style="width: 40rem;">
+            <img src="{{ post.photo_url }}" class="card-img-top" alt="...">
+        </div>
+      <!-- {{ post.content }} -->
+      <!-- <br> -->
+      <!-- <img src="{{post.photo_url}}" /> -->
+      <!-- {{ post.photo_url }} -->
+      <!-- Submitted by: {{post.user.username}} -->
+    </li>
+  </a>
+  {% endfor %}
+</ul>
+
+{% endblock %}
