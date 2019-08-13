@@ -328,7 +328,7 @@ a.link:hover {
 }
 
 /* sign up page */
-.form-section{
+.form-section2 {
   /* display: flex;
   justify-content: center; */
   margin: 150px 0 0 150px;
@@ -345,7 +345,7 @@ a.link:hover {
 }
 
 /* login page */
-.login-button {
+/* .login-button {
   background-color: #1da1f2;
   border: 1px solid #1da1f2;
   border-radius: 20px;
@@ -356,7 +356,8 @@ a.link:hover {
 }
 .login-header {
   margin-bottom: 25px;
-}
+}*/
+
 .input-field {
   background-color: rgba(66, 117, 225, 0.5);
 }
