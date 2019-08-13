@@ -1,6 +1,5 @@
 *Twitter Clone  
 
-  
 
 *Project 2  
 
@@ -8,11 +7,8 @@
 
 *Link to Heroku 
 
-- 
+- https://teamtwitterga.herokuapp.com/
 
-  
-
-  
 
 *Technologies used 
 
@@ -24,11 +20,16 @@
 
 -CSS3 
 
--JQuery 
-
 -HTML5 
 
 -Heroku for deployment 
+
+
+* Requirement 
+
+-User Login
+
+-Javascript and Jquery
 
   
 
