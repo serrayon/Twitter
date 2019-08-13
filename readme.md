@@ -44,15 +44,12 @@
 *Wireframe 
 
 -Before  
+![001](https://user-images.githubusercontent.com/35648615/62969298-ce5c3d00-bdc1-11e9-98cc-58ee5a15cd0f.jpg)
 
-![IMG_1813](https://user-images.githubusercontent.com/35648615/62968492-06fb1700-bdc0-11e9-8b8d-56edaa1f7ba4.jpg)
-
-
-
- 
 
 -After  
- ![Twitter-Homepage](/IMG_1814.jpg)
+![IMG_1814](https://user-images.githubusercontent.com/35648615/62968573-2db94d80-bdc0-11e9-8ad7-dbb477fc44e2.jpg)
+
 
  
 
