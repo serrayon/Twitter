@@ -7,7 +7,7 @@
 
 *Link to Heroku 
 
-- https://teamtwitterga.herokuapp.com/
+
 
 
 *Technologies used 
